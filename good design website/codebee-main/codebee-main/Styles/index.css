@@ -1,0 +1,341 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+
+
+  body {
+    background-color: #0d0d0d;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    flex-direction: column; 
+    display: flex;
+  }
+
+  /* Header Styles */
+  header {  
+    display: flex;
+    backdrop-filter: blur(10px);
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s;
+  }
+  
+  header #particles{
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Full-screen background */
+    top: 0;
+    left: 0;
+    z-index: -1; /* Push it behind other content */
+    pointer-events: none; /* Prevents blocking clicks */
+}
+
+@keyframes pulse {
+    0%, 100%{
+        opacity: 0;
+    }
+    15%, 45%{
+        opacity: 1;
+    }
+    60%{
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.1);
+        opacity: 0;
+    }
+}
+  .content span{
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
+    
+}
+
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #00aaff;
+    z-index: 1; 
+    pointer-events: none; 
+
+    
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between image and text */
+    width: 50%;
+}
+
+.logo {
+    width: 70px; /* Adjust size as needed */
+}
+
+.logo-text {
+    font-size: 22px; /* Slightly larger for better visibility */
+    color: white;
+    font-weight: 900; /* Extra bold for a strong impact */
+    font-family: 'Poppins', sans-serif; /* Clean and modern font */
+    letter-spacing: 1px; /* Slight spacing for readability */
+    text-transform: uppercase; /* Professional and bold appearance */
+}
+
+
+
+ nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Moves links to the right */
+    gap: 15px;
+    width: 100%;
+ }
+
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    justify-self: flex-end;
+    
+  }
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #00aaff;
+}
+
+.nav-link.active {
+    color: #0077cc;
+}
+
+  nav a:hover {
+    color: #00aaff; /* Bright blue */
+  }
+  #hamburgerBtn{
+    display: none;
+  }
+  /* Hero Section */
+  .content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: url("hero-bg.jpg") no-repeat center center/cover; */
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 48px;
+    color: #00aaff; /* Bright blue */
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  p {
+    font-size: 20px;
+    margin: 10px 0;
+    opacity: 0.9;
+  }
+  
+  button, #loginBtn {
+    background-color: #0077cc; /* Blue */
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+    margin-top: 15px;
+  }
+  
+  button:hover,
+  #loginBtn:hover {
+    background-color: #0055aa;
+    transform: scale(1.05);
+  }
+  
+  /* Features Section */
+  .container {
+    text-align: center;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center; /* Centers cards horizontally */
+    gap: 60px; /* Adds space between cards */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.feature-heading {
+    width: 100%;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ffffff  ;
+}
+
+  
+  .card {
+    background: #001d3d; /* Dark blue */
+    padding: 1rem;
+    border-radius: 12px;
+    width: 300px;
+    text-align: center;
+    /* box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2); */
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: #fff;
+  }
+  
+  .card .icon {
+    font-size: 55px;
+  }
+  
+  .card h3 {
+    color: #00aaff;
+    margin-top: 10px;
+  }
+  
+  .card a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card a:hover {
+    color: #0055aa;
+  }
+  
+  /* Footer */
+  /* Footer Styles */
+footer.container {
+    backdrop-filter: blur(10px);
+ 
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center;     /* Centers content vertically */
+    width: 100%;
+ 
+    bottom: 0; /* Ensures the footer is at the bottom of the page */
+    padding: 10px;
+}
+
+footer .column {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+    text-align: center; /* Centers text inside each column */
+}
+
+footer .logo img {
+    max-width: 80px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+footer .socials {
+    display: flex;
+    gap: 10px;
+}
+
+footer .socials a {
+    color: #ccc;
+    font-size: 22px;
+    transition: color 0.3s ease-in-out;
+}
+
+footer .socials a:hover {
+    color: #00aaff;
+}
+
+footer h4 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+footer a {
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+    color: #00aaff;
+}
+
+/* nav a.active {
+    color: #00aaff;
+    font-weight: bold;
+    border-bottom: 2px solid #00aaff;
+    transition: 0.3s ease-in-out;
+}
+ */
+
+
+
+.copyright{
+    
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;  
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 736px){
+    nav, .logo-container{
+        display: none;
+    }
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+    footer {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+  }

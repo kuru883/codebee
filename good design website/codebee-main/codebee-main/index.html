@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Bee - Learn Java & VB.NET</title>
+  <link rel="icon" href="Code_Bee_Circular.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+  <link rel="stylesheet" href="Styles/index.css">
+</head>
+<body>
+  <header>
+    <div id="particles"></div>
+    <div class="logo-container" id="Home">
+      <img src="Code_Bee_Circular.png" alt="Code Bee Logo" class="logo">
+      <p class="logo-text">Code Bee</p>
+  </div>
+  
+    <nav>
+      <a href="#home"  class="nav-link active" id="active">Home</a>
+      <a href="#features"  class="nav-link" id="link3">Features</a>
+      <a href="#about"  class="nav-link" id="link2">About</a>
+      <a href="#contact"  class="nav-link" id="link4">Contact</a>
+      <a href="login.html"><button id="loginBtn">
+          Login
+      </button></a>
+    </nav>
+
+    <div class="hamburger-menu" id="hamburger">
+      <button id="hamburgerBtn">
+        <i class="ri-menu-line"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="content">
+    <span class="blur"></span>
+    <span class="blur"></span>  
+    <h4 id="userName" class="user-name" >Hello, Users</h4>
+    <h1>Welcome to <span>Code Bee</span></h1>
+    <p>Your gateway to mastering Java and VB.NET.</p>
+    <button id="getStarted">Get Started</button>
+  </div>
+
+  <!-- Our Feature Section -->
+  <div class="container" id="our-feature">
+    <h2 class="feature-heading">OUR FEATURES</h2>
+    <div class="card">
+      <div class="icon">☕</div>
+      <h3>Java</h3>
+      <p>Learn and practice Java programming. Click below to get started.</p>
+      <a href="java.html" target="_blank">Start Now →</a>
+    </div>
+    <div class="card">
+      <div class="icon">💻</div>
+      <h3>VB.NET</h3>
+      <p>Learn and practice VB.NET programming. Click below to get started.</p>
+      <a href="DOTNET.html" target="_blank">Start Now →</a>
+    </div>
+  </div>
+
+    <footer class="container" id="footer">
+      <span class="blur" id="blur1"></span>
+      <span class="blur" id="blur2"></span>
+      <div class="column">
+          <div class="logo">
+              <img src="Code_Bee_Circular.png">
+          </div>
+          <p>
+            Helping learners master programming with expert guidance and hands-on experience.
+          </p>
+          <div class="socials">
+              <!-- <a href="#"><i class="ri-mail-line"></i></a> -->
+              <a href="https://www.facebook.com/reignkaizen.bonsa"><i class="ri-facebook-fill"></i></a>
+              <!-- <a href="#"><i class="ri-twitter-line"></i></a> -->
+          </div>
+      </div>
+      <div class="column">
+          <h4>About Us</h4>
+          <a href="#" id="missionLink">Our Mission</a>
+          <a href="#" id="workLink">How CODE BEE Works</a>
+          <a href="#" id="teamLink">Meet the Team</a>
+      </div>
+      <div class="column">
+          <h4>Contact</h4>
+          <a href="#" id="contactLink">Contact Us</a>
+          <a href="#" id="privacyLink">Privacy Policy</a>
+          <a href="#" id="termsLink">Terms & Conditions</a>
+      </div>
+    
+      </footer>
+
+  
+      <div class="copyright">
+        Copyright © 2025 Code Bee. All Rights Reserved.
+    </div>
+
+
+  <script>
+
+function scrollToElement(selector, instance = 0) {
+    const elements = document.querySelectorAll(selector);
+    if (elements.length > instance) {
+       
+            elements[instance].scrollIntoView({ behavior: "smooth", block: "start" });
+       
+    }
+}
+
+// Navigation link event listeners
+const links = [
+    { id: "active", target: "#Home" },
+    { id: "link2", target: "#footer", instance: 0 }, // Changed instance to 0
+    { id: "link3", target: "#our-feature", instance: 0 }, // Kept instance 1
+    { id: "link4", target: "#footer", instance: 0 },
+    { id: "getStarted", target: "#our-feature", instance: 0 },
+    
+];
+
+links.forEach(link => {
+    const element = document.getElementById(link.id);
+    if (element) {
+        element.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevents any default behavior like jumping instantly
+            scrollToElement(link.target, link.instance || 0);
+        });
+    }
+    document.getElementById("active").addEventListener("click", function (event) {
+       
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link => {
+        link.addEventListener("click", function () {
+            // Remove 'active' class from all links
+            links.forEach(l => l.classList.remove("active"));
+            
+            // Add 'active' class to clicked link
+            this.classList.add("active");
+        });
+    });
+});
+
+ScrollReveal({
+            reset: false    ,  // Prevents excessive animation repeats
+            distance: '50px',
+            duration: 1500,  // Slightly faster animations
+            delay: 200
+        });
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            ScrollReveal().reveal('.logo-container, nav', { origin: 'top', interval: 100, delay: 450 });
+    
+            // ScrollReveal().reveal('.content h1, .content p, #getStartedBtn', { origin: 'left', interval: 150 });
+    
+            // ScrollReveal().reveal('#image img', { origin: 'right', delay: 300 });
+    
+            ScrollReveal().reveal('.card', { origin: 'bottom', interval: 100 });
+    
+            ScrollReveal().reveal('.column', { origin: 'top', interval: 150 });
+    
+            ScrollReveal().reveal('.socials a', { scale: 0.85, interval: 100 });
+    
+            // ScrollReveal().reveal('.copyright', { origin: 'bottom', delay: 100 });
+        });
+// document.addEventListener("DOMContentLoaded", function () {
+//     const sections = document.querySelectorAll("section, .container"); // Select sections and containers
+//     const navLinks = document.querySelectorAll(".nav-link");
+
+//     function changeActiveSection() {
+//         let scrollPosition = window.scrollY + 100; // Offset for better accuracy
+
+//         sections.forEach((section) => {
+//             if (
+//                 scrollPosition >= section.offsetTop &&
+//                 scrollPosition < section.offsetTop + section.offsetHeight
+//             ) {
+//                 navLinks.forEach((link) => link.classList.remove("active"));
+//                 let activeLink = document.querySelector(`nav a[href="#${section.id}"]`);
+//                 if (activeLink) {
+//                     activeLink.classList.add("active");
+//                 }
+//             }
+//         });
+//     }
+
+//     window.addEventListener("scroll", changeActiveSection);
+
+//     // Add click event to nav links
+//     navLinks.forEach((link) => {
+//         link.addEventListener("click", function () {
+//             navLinks.forEach((nav) => nav.classList.remove("active"));
+//             this.classList.add("active");
+//         });
+//     });
+// });
+
+
+  </script>
+
+
+<script src="index.js"></script>
+</body>
+</html>

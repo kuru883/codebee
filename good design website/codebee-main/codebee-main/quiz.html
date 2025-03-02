@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeBee Quiz</title>
+  <link rel="stylesheet" href="Styles/quizstyle.css">
+</head>
+<body>
+  <div class="quiz-container">
+    <!-- Back button to return to previous page -->
+    <a id="backButton" href="java.html">Back</a>
+
+    
+    <!-- Difficulty selection container -->
+    <div id="difficultyContainer">
+      <h1>Welcome to CodeBee Quiz!</h1>
+      <p>Select your difficulty level:</p>
+      <div class="difficulty-buttons">
+        <button class="btn" onclick="selectDifficulty('easy')">Easy</button>
+        <button class="btn" onclick="selectDifficulty('medium')">Medium</button>
+        <button class="btn" onclick="selectDifficulty('hard')">Hard</button>
+      </div>
+    </div>
+
+    <!-- Quiz container (hidden until a difficulty is selected) -->
+    <div id="quiz" class="hidden">
+      <div id="questionArea">
+        <h2 id="questionText"></h2>
+        <input type="text" id="answerInput" placeholder="Type your answer here">
+        <button id="submitButton">Submit</button>
+        <p id="feedback"></p>
+      </div>
+      <div id="timer">Time left: <span id="timeLeft"></span> seconds</div>
+    </div>
+    
+    <!-- Results container -->
+    <div id="result" class="hidden">
+      <h2>Quiz Results</h2>
+      <p id="score"></p>
+      <p id="bonusTime"></p>
+      <button onclick="window.location.reload()">Play Again</button>
+      <button onclick="window.history.back()">Back to Main</button>
+    </div>
+  </div>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

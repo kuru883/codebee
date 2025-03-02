@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="Styles/login.css">
+    <link rel="icon" href="Code_Bee_Circular.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+   
+    <div class="login-container">
+        <span class="blur"></span>
+        <span class="blur"></span>  
+        <div id="particles"></div>
+        <div class="form-wrapper">
+            <h1>
+                <span class="letter">L</span>
+                <span class="letter">O</span>
+                <span class="letter">G</span>
+                <span class="letter">I</span>
+                <span class="letter">N</span>
+                <!-- <span class="letter">m</span>
+                <span class="letter">e</span>
+                <span class="letter">&nbsp;</span>
+                <span class="letter">B</span>
+                <span class="letter">a</span>
+                <span class="letter">c</span>
+                <span class="letter">k</span> -->
+              </h1>
+              
+              
+            <form class="login-form">
+                <div class="form-group">
+                    <input type="text" id="username" required>
+                    <label for="username">Username</label>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" required>
+                    <label for="password">Password</label>
+                    <i id="togglePasswordIcon" class="bx bxs-lock toggle-password" onclick="togglePassword()" title="Show Password"></i>
+                </div>
+
+                <div class="remember-forgot">
+                    <label><input type="checkbox" id="rememberMe"> Remember Me</label>
+                    <a href="forget.html">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn">Log In</button>
+
+                <div class="register-link">
+                    <p>Don't have an account? <a href="register.html">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+    <!-- <div class="alert" id="alertBox">
+        Logged in successfully!
+    </div> -->
+
+    <script src="login.js"></script>
+</body>
+</html>
